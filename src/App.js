@@ -8,11 +8,10 @@
 import React, { useState } from 'react';
 // Import the Posts (plural!) and SearchBar components, since they are used inside App component
 // Import the dummyData
-import Posts from './components/Posts';
-import SearchBar from './components/SearchBar';
+import Posts from './components/Posts/Posts';
+import SearchBar from './components/SearchBar/SearchBar';
 import './App.css';
 import dummyData from './dummy-data';
-import { useState } from 'react/cjs/react.production.min';
 
 const App = () => {
   // Create a state called `posts` to hold the array of post objects, **initializing to dummyData**.
@@ -35,7 +34,7 @@ const App = () => {
      */
     const newPosts = posts.map((post) => {
       if (post.id === postId) {
-        return {... post, likes: post.likes + 1};
+        return {...post, likes: post.likes + 1};
       } else {
         return post;
       }
